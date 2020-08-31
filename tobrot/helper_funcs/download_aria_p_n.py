@@ -443,16 +443,18 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                     # https://t.me/c/1220993104/423318
                     downloading_dir_name = str(file.name)
                 except:
-                    pass
+                   pass
                 #
+                msg = f"\n🇦🇷RTG🇦🇷 is Downloading File🤓🤓: `{downloading_dir_name}`"
+                msg += f"\nSpeed: {file.download_speed_string()} 🔽 / {file.upload_speed_string()} 🔼"
+                msg += f"\nProgress: {file.progress_string()}"
+                msg += f"\nTotal Size: {file.total_length_string()}"
+
                 if is_file is None :
-                   msgg = f"Conn: {file.connections} <b>|</b> GID: <code>{gid}</code>"
+                   msg += f"\n<b>Connections:</b> {file.connections}"
                 else :
-		msg = f"\n`{downloading_dir_name}`"
-                msg += f"\n⚡️Speed⚡️: 🔽 {file.download_speed_string()} 🔻  / 🔺 {file.upload_speed_string()} 🔼"
-                msg += f"\n🔋Progress🔋: {file.progress_string()} \n⏰ETA⏰: {file.eta_string()}"
-		msg += f"\n<b>Peer Info:</b>[ 🔺P🔺 : {file.connections} || 🔻S🔻 : {file.num_seeders} ]"
-                msg += f"\n⌛️Total Size⌛️: {file.total_length_string()} \n<b>Say Thanks To 🇦🇷RTG🇦🇷</b> "
+                   msg += f"\n<b>Info:</b>[ P : {file.connections} || S : {file.num_seeders} ]"
+
                 #msg += f"\nSize: {file.total_length_string()}"
 
                 #if is_file is None :
