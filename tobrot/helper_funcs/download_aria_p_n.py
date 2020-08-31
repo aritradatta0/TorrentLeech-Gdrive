@@ -445,7 +445,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 except:
                    pass
                 #
-                msg = f"\n🇦🇷RTG🇦🇷 is Downloading File🤓🤓: `{downloading_dir_name}`"
+                msg = f"\n🇦🇷RTG🇦🇷 is Downloading File🤓🤓: `{downloading_dir_name}`\n"
                 msg += f"\n⚡️Speed⚡️: 🔽 {file.download_speed_string()} 🔻  / 🔺 {file.upload_speed_string()} 🔼\n"
                 msg += f"\n🔋Progress🔋: {file.progress_string()}\n"
                 msg += f"\n⌛️Total Size⌛️: {file.total_length_string()}\n"
@@ -453,7 +453,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 if is_file is None :
                    msg += f"\n<b>👁‍🗨Connections👁‍🗨:</b> {file.connections}"
                 else :
-                   msg += f"\n<b>🔍Info:🔎\n</b>[🔺P🔺: {file.connections} || 🔻S🔻: {file.num_seeders} \n<b>🀄️Say Thanks To 🇦🇷RTG🇦🇷</b>]"
+                   msg += f"\n<b>🔍Info:🔎\n</b>🔺P🔺: {file.connections} || 🔻S🔻: {file.num_seeders}\n \n<b>🀄️Say Thanks To 🇦🇷RTG🇦🇷</b>"
 
                 #msg += f"\nSize: {file.total_length_string()}"
 
