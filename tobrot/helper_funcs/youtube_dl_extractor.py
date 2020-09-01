@@ -159,8 +159,10 @@ async def extract_youtube_dl_formats(url, cf_name, yt_dl_user_name, yt_dl_pass_w
         reply_markup = pyrogram.InlineKeyboardMarkup(inline_keyboard)
         # LOGGER.info(reply_markup)
         if cf_name:
-            succss_mesg = f"""Select the desired format | {cf_name}"""
+            succss_mesg = f"""🇦🇷RTG Z Assistant🇦🇷
+ Format Select Kor Banchot😡: 👇 | {cf_name}"""
         else:
-            succss_mesg = f"""Select the desired format"""
+            succss_mesg = f"""🇦🇷RTG Z Assistant🇦🇷
+ Format Select Kor Banchot😡: 👇 """
         LOGGER.info(succss_mesg)
         return thumb_image, succss_mesg, reply_markup
