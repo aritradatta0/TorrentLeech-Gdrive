@@ -45,7 +45,9 @@ async def incoming_purge_message_f(client, message):
 
 async def incoming_message_f(client, message):
     """/leech command"""
-    i_m_sefg = await message.reply_text("processing", quote=True)
+    g_id = message.from_user.id
+    credit = await message.reply_text(f"Leechacchi Re Khankir Chele <a href='tg://user?id={g_id}'>🌚</a>", parse_mode="html")
+    i_m_sefg = await credit.reply_text("processing\n🀄️Say Thanks To 🇦🇷RTG🇦🇷", quote=True)
     is_zip = False
     is_unzip = False
     is_unrar = False
@@ -64,7 +66,7 @@ async def incoming_message_f(client, message):
     LOGGER.info(dl_url)
     LOGGER.info(cf_name)
     if dl_url is not None:
-        await i_m_sefg.edit_text("extracting links")
+        await i_m_sefg.edit_text("🔥Link Berkorchi Vara🔥")
         # start the aria2c daemon
         aria_i_p = await aria_start()
         LOGGER.info(aria_i_p)
@@ -78,7 +80,7 @@ async def incoming_message_f(client, message):
         # create download directory, if not exist
         if not os.path.isdir(new_download_location):
             os.makedirs(new_download_location)
-        await i_m_sefg.edit_text("trying to download")
+        await i_m_sefg.edit_text("Download Korar Chesta Korchi 🔥")
         # try to download the "link"
         sagtus, err_message = await call_apropriate_function(
             aria_i_p,
@@ -97,13 +99,15 @@ async def incoming_message_f(client, message):
             await i_m_sefg.edit_text(err_message)
     else:
         await i_m_sefg.edit_text(
-            "**FCUK**! wat have you entered. \nPlease read /help \n"
+            "😡😡Kanachoda Naki Bara Podmukho😡😡"
             f"<b>API Error</b>: {cf_name}"
         )
 #
 async def incoming_gdrive_message_f(client, message):
     """/gleech command"""
-    i_m_sefg = await message.reply_text("processing", quote=True)
+    g_id = message.from_user.id
+    credit = await message.reply_text(f"Leechacchi Re Khankir Chele <a href='tg://user?id={g_id}'>🌚</a>", parse_mode="html")
+    i_m_sefg = await credit.reply_text("processing\n🀄️Say Thanks To 🇦🇷RTG🇦🇷", quote=True)
     is_zip = False
     is_unzip = False
     is_unrar = False
@@ -152,14 +156,16 @@ async def incoming_gdrive_message_f(client, message):
         )
     else:
         await i_m_sefg.edit_text(
-            "**FCUK**! wat have you entered. \nPlease read /help \n"
+            "😡😡Kanachoda Naki Bara Podmukho😡😡"
             f"<b>API Error</b>: {cf_name}"
         )
 
 
 async def incoming_youtube_dl_f(client, message):
     """ /ytdl command """
-    i_m_sefg = await message.reply_text("processing", quote=True)
+    g_id = message.from_user.id
+    credit = await message.reply_text(f"Leechacchi Re Khankir Chele <a href='tg://user?id={g_id}'>🌚</a>", parse_mode="html")
+    i_m_sefg = await credit.reply_text("processing\n🀄️Say Thanks To 🇦🇷RTG🇦🇷", quote=True)
     # LOGGER.info(message)
     # extract link from message
     dl_url, cf_name, yt_dl_user_name, yt_dl_pass_word = await extract_link(
@@ -220,11 +226,11 @@ async def g_yt_playlist(client, message):
         if message.command[1] == "gdrive":
             G_DRIVE = True
     if 'youtube.com/playlist' in message.reply_to_message.text:
-        i_m_sefg = await message.reply_text("Downloading...you should wait🤗", quote=True)
+        i_m_sefg = await message.reply_text("Download Hocche Dhon Sokto Kor🌚", quote=True)
         await yt_playlist_downg(message.reply_to_message, i_m_sefg, G_DRIVE)
     
     else:
-        await message.reply_text("Reply to youtube playlist link only 🙄")
+        await message.reply_text("Maa ka Nunu Sudhu PlayList de😡")
         
  #
 async def g_clonee(client, message):
