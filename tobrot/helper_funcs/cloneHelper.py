@@ -105,7 +105,7 @@ class CloneHelper:
                 "--filter-from=./filter1.txt",
                 f"{_flag}",
                 f'DRIVE:{destination}',
-		'--process'
+		'--progress'
             ]
             LOGGER.info(g_a_u)
             gau_tam = await asyncio.create_subprocess_exec(
