@@ -149,6 +149,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         g_au = ['rclone', 'copy', '--config=/app/rclone.conf', f'/app/{file_upload}', 'DRIVE:'f'{destination}', '-v', '--progress']
         tmp = await asyncio.create_subprocess_exec(*g_au, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
         pro, cess = await tmp.communicate()
+        print(f'[{*g_au!r} exited with {proc.returncode}]')
         LOGGER.info(pro.decode('utf-8'))
         LOGGER.info(cess.decode('utf-8'))
         gk_file = re.escape(file_upload)
