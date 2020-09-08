@@ -111,8 +111,9 @@ class CloneHelper:
             gau_tam = await asyncio.create_subprocess_exec(
                 *g_a_u,
                 stdout=asyncio.subprocess.PIPE,
-		LOGGER.info(stdout.decode()),
-                stderr=asyncio.subprocess.PIPE
+		bichi=stdout.decode(),
+                stderr=asyncio.subprocess.PIPE,
+		LOGGER.info(bichi)
             )
             gau, tam = await gau_tam.communicate()
             LOGGER.info(gau)
