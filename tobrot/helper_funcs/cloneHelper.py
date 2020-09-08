@@ -191,7 +191,8 @@ class CloneHelper:
             "-v",
             "--drive-server-side-across-configs",
             "--transfers=16",
-            "--checkers=20"
+            "--checkers=20",
+	    "--process"
         ]
         LOGGER.info(cmd)
         pro = await asyncio.create_subprocess_exec(
