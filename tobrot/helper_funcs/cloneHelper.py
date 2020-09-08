@@ -104,13 +104,16 @@ class CloneHelper:
                 'i',
                 "--filter-from=./filter1.txt",
                 f"{_flag}",
-                f'DRIVE:{destination}'
+                f'DRIVE:{destination}',
+		'--process'
             ]
             LOGGER.info(g_a_u)
             gau_tam = await asyncio.create_subprocess_exec(
                 *g_a_u,
                 stdout=asyncio.subprocess.PIPE,
-                stderr=asyncio.subprocess.PIPE
+		print(f'[stdout]\n{stdout.decode()}'),
+                stderr=asyncio.subprocess.PIPE,
+		print(f'[stderr]\n{stderr.decode()}')
             )
             gau, tam = await gau_tam.communicate()
             LOGGER.info(gau)
@@ -145,8 +148,8 @@ class CloneHelper:
                 button.append([pyrogram.InlineKeyboardButton(text="ℹ️ IndexUrl ℹ️", url=f"{tam_link}")])
             button_markup = pyrogram.InlineKeyboardMarkup(button)
             msg = await self.lsg.edit_text(
-                f"🤖: {_up} cloned successfully in your Cloud <a href='tg://user?id={self.u_id}'>🤒</a>\
-                \n📀 Info: Calculating...",
+                f"🇦🇷: {_up} 😎😎Sob File Churi kore Uplodiye Diyechi Vara Tor Cloud e 😎😎 <a href='tg://user?id={self.u_id}'>🇦🇷</a>\
+                \n🎁 Info: Calculating...\n<b>🀄️Say Thanks To 🇦🇷RTG🇦🇷</b>",
                 reply_markup=button_markup,
                 parse_mode="html"
             )
@@ -168,8 +171,8 @@ class CloneHelper:
             LOGGER.info(am.decode('utf-8'))
             await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
             await msg.edit_text(
-                f"🤖: {_up} cloned successfully in your Cloud <a href='tg://user?id={self.u_id}'>🤒</a>\
-                \n📀 Info:\n{g_autam}",
+                f"🤖: {_up} 😎😎Sob File Churi kore Uplodiye Diyechi Vara Tor Cloud e 😎😎<a href='tg://user?id={self.u_id}'>🤒</a>\
+                \n📀 Info:\n{g_autam}\n<b>🀄️Say Thanks To 🇦🇷RTG🇦🇷</b>",
                 reply_markup=button_markup,
                 parse_mode="html"
             )
@@ -177,7 +180,7 @@ class CloneHelper:
             
 		
     async def gcl(self):
-        self.lsg = await self.mess.reply_text(f"Cloning...you should wait 🤒")
+        self.lsg = await self.mess.reply_text(f"😜😜Opekkha Kor Bal Ami Akhn Churi Korchi🤓🤓")
         destination = f'{DESTINATION_FOLDER}'
         cmd = [
             "/app/gautam/gclone",
